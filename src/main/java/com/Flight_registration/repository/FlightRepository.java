@@ -1,0 +1,17 @@
+package com.Flight_registration.repository;
+
+
+
+import com.Flight_registration.entities.Flight;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Date;
+import java.util.List;
+
+@Repository
+public interface FlightRepository extends JpaRepository<Flight, Long> {
+
+    List<Flight> findByDepartureCityAndArrivalCityAndDateOfDeparture(String departureCity, String arrivalCity, Date dateOfDeparture);
+
+}
